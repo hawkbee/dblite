@@ -213,12 +213,12 @@ function dblite() {
 
   // common error helper
   function onerror(data) {
-    if($callback && 1 < $callback.length) {  
+    if($callback) {
       // there is a callback waiting
       // and there is more than an argument in there
       // the callback is waiting for errors too
       var callback = $callback;
-      wasSelect = wasNotSelect = dontParseCSV = false;
+      busy = wasSelect = wasNotSelect = dontParseCSV = false;
       $callback = $fields = null;
       wasError = true;
       // should the next be called ? next();
